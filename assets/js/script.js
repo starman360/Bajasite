@@ -2,7 +2,12 @@ AOS.init({
     duration: 1200,
 })
 
-$('.pages').scrollspy({ target: '#naviconlist' })
+var mobile = false;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    mobile = true;
+}
+
+// $('.pages').scrollspy({ target: '#naviconlist' })
 
 // $('body').bind('mousewheel', function (e) {
 //     if (e.preventDefault) { e.preventDefault(); }
@@ -55,13 +60,13 @@ function inarow(delta) {
     return 0;
 }
 
-function createNewsTiles(parent) {
+function createNewsTiles() {
     function cardtile(newstile, index) {
         var img = '';
         if (newstile.imageloc != "" && newstile.imageloc != "None")
             img = '<img class="card-img-top" src="' + newstile.imageloc + '" alt="Card image cap">';
         descriptionSnippet = newstile.desc.substring(0, 200);
-        return '<div class="card" data-aos="fade-up"><div class="card-header">' + newstile.date + '</div><div class="card-body"><h5 class="card-title">' + newstile.title + '</h5>' + img + '<p class="card-text">' + descriptionSnippet + ' ... </p><button type="button" class="btn btn-light" data-toggle="modal" data-target=".readmore' + index + '">Read More</button></div></div>'
+        return '<div class="card" data-aos="fade-up"><div class="card-header">' + newstile.date + '</div><div class="card-body"><h5 class="card-title">' + newstile.title + '</h5>' + img + '<p class="card-text">' + descriptionSnippet + ' ... </p><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".readmore' + index + '">Read More</button></div></div>'
     }
     function modaltile(newstile, index) {
         return '<div class="modal fade readmore' + index + '" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">' + newstile.title + '</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><img src="' + newstile.imageloc + '" width="100%"><div class="modal-body"><p>' + newstile.desc + '</p></div></div></div></div>'
@@ -73,10 +78,22 @@ function createNewsTiles(parent) {
         $('div#tiles').append(card);
         $('div#news').append(popup);
     });
+   
+    if (mobile) $('div#tiles').width(322 * newstiles.length);
+    else  $('div#tiles').append('<div class="verti"></div>');
 }
 
 
 $(document).ready(function () {
+    $('nav#mynav button').addClass('collapsed')
+    $('nav#mynav button').click(function() {
+        if (!$('nav#mynav button').hasClass('collapsed')) {
+            setTimeout(function(){$('nav#mynav').removeClass('bg-white');}, 250);
+        }
+        else {
+            $('nav#mynav').addClass('bg-white');
+        }
+    });
     createNewsTiles();
     $('.page').each(function () {
         scrollpositions.push($(this).offset().top);
@@ -109,18 +126,5 @@ $(document).ready(function () {
     //         }
     //     }
     // });
-
-    // $(window).watch('scrollTop()', function (id, old, newo ) {
-    //     $('li.nav-item').each(function () {
-    //         $(this).removeClass('active');
-    //     });
-    //     pages.forEach(function (element) {
-    //         if (isScrolledIntoView(element)) {
-    //             console.log(element);
-    //             $('li.nav-item > a[href$="' + element + '"]').parent().addClass('active');
-    //         }
-    //     });
-    // });
-
 });
 
