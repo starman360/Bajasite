@@ -88,7 +88,8 @@ div.navbar-ghost {
     left: 0%;
 }
 
-div.card-header {
+div.card-header,
+h5.modal-title  {
     font-weight: 700;
     font-family: Bebas-neue;
     font-size: 1.5em;
@@ -101,15 +102,21 @@ div.card-header {
 
 div.card {
     margin: 10px;
-    align-self: flex-start;
-    width: inherit;
+    width: 300px;
 }
+
+div.modal-body {
+    padding: 30px;
+}
+
+
 
 div#tiles {
     display: flex;
     flex-flow: column wrap;
-    width: 400px;
     max-height: calc(100vh - 120px);
+    align-items: flex-start;
+    align-content: flex-start;
 }
 
 img.card-img-top {
@@ -147,10 +154,37 @@ div.riotracing {
     z-index: 1;
 }
 
+div#sponsors div.row {
+    height: 100%;
+}
+
 @keyframes pulse {
     0%   {opacity: 1; transform: translateY(-20px); }
     25%  {opacity: 0.5; transform: translateY(-5px);}
     50%  {opacity: 0.25;}
     75%  {opacity: 0.5; transform: translateY(-5px);}
     100% {opacity: 1; transform: translateY(-20px);}
+}
+
+/* Desktops Go Here */
+@media (min-width: 768px) {
+    div#tiles {
+        display: flex;
+        flex-flow: column wrap;
+        max-height: calc(100vh - 120px);
+        align-items: flex-start;
+        align-content: flex-start;
+        width: inherit;
+    }
+
+    div.card {
+        margin: 10px;
+        flex: 0 4 auto;
+        width: 400px;
+    }
+
+    div.verti {
+        height: calc(100vh - 156px);
+        width: 10px;
+    }
 }

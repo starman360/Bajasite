@@ -2,6 +2,11 @@ AOS.init({
     duration: 1200,
 })
 
+var mobile = false;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    mobile = true;
+}
+
 $('.pages').scrollspy({ target: '#naviconlist' })
 
 // $('body').bind('mousewheel', function (e) {
@@ -55,7 +60,7 @@ function inarow(delta) {
     return 0;
 }
 
-function createNewsTiles(parent) {
+function createNewsTiles() {
     function cardtile(newstile, index) {
         var img = '';
         if (newstile.imageloc != "" && newstile.imageloc != "None")
@@ -73,6 +78,9 @@ function createNewsTiles(parent) {
         $('div#tiles').append(card);
         $('div#news').append(popup);
     });
+   
+    if (mobile) $('div#tiles').width(322 * newstiles.length);
+    else  $('div#tiles').append('<div class="verti"></div>');
 }
 
 
