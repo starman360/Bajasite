@@ -7,7 +7,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     mobile = true;
 }
 
-$('.pages').scrollspy({ target: '#naviconlist' })
+// $('.pages').scrollspy({ target: '#naviconlist' })
 
 // $('body').bind('mousewheel', function (e) {
 //     if (e.preventDefault) { e.preventDefault(); }
@@ -117,18 +117,5 @@ $(document).ready(function () {
     //         }
     //     }
     // });
-
-    // $(window).watch('scrollTop()', function (id, old, newo ) {
-    //     $('li.nav-item').each(function () {
-    //         $(this).removeClass('active');
-    //     });
-    //     pages.forEach(function (element) {
-    //         if (isScrolledIntoView(element)) {
-    //             console.log(element);
-    //             $('li.nav-item > a[href$="' + element + '"]').parent().addClass('active');
-    //         }
-    //     });
-    // });
-
 });
 
