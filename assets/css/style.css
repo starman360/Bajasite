@@ -51,12 +51,6 @@ a.navbar-brand{
     font-style: italic;
 }
 
-ul.navbar-nav {
-    /* font-family: Bebas-neue; */
-    /* letter-spacing: 0.1em; */
-    /* font-style: italic; */
-}
-
 div.pages{
     /* overflow-y: auto;
     -webkit-scroll-behavior: smooth;
@@ -74,10 +68,6 @@ div.page{
     padding: 50px 50px;
     padding-top: 106px;
     overflow: hidden;
-}
-
-div.page > .container-fluid{
-    
 }
 
 div#main.page{ 
@@ -140,8 +130,6 @@ div.modal-body {
     padding: 30px;
 }
 
-
-
 div#tiles {
     display: flex;
     flex-flow: column wrap;
@@ -185,7 +173,9 @@ div.riotracing {
     z-index: 1;
 }
 
-
+div#car {
+    background: url(../images/testBajaCar.jpg) no-repeat center center;
+}
 
 @keyframes pulse {
     0%   {opacity: 1; transform: translateY(-20px); }
