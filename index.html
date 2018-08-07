@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body data-spy="scroll" data-target="#mynav" data-offset="0">
-    <nav id="mynav" class="navbar navbar-expand-lg navbar-light fixed-top bg-faded">
+<body data-spy="scroll" data-target="#mynav" data-offset="10">
+    <nav id="mynav" class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="#">RIOT RACING</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -22,9 +22,6 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul id="naviconlist" class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#main">Home</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
                 </li>
@@ -54,7 +51,7 @@
             <div class="mainbkg"></div>
             <div class="riotracing"></div>
             <div class="mainbkg"></div>
-            <div class="navbar-ghost"></div>
+            <!-- <div class="navbar-ghost"></div> -->
             <div class="container-fluid">
                 <div class="row">
                 </div>
@@ -70,21 +67,32 @@
         </div>
         <div id="team" class="page">
             <div class="navbar-ghost"></div>
-            <h1 class="title" data-aos="zoom-out">Team</h1>
+            <div class="card desktop-only" data-aos="fade-left">
+                <div class="card-header">
+                    <h1 class="title">The Team</h1>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">We pride ourselves in having an awesome team almost such that we call ourselves family!</p>
+                    <a class="btn btn-primary" href="#" role="button">Meet the Family!</a>
+                </div>
+            </div>
+
         </div>
         <div id="sponsors" class="page">
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-md-4" data-aos="fade-right">
                         <h1 class="title">Sponsors</h1>
-                        <p>Thank you to all out Sponsors. They help make everything happen!</p>
+                        <p>The following companies have generously donated time, money or materials to the RIT Baja SAE Team,
+                            something for which we are extremely grateful.</p>
+                        <a class="btn btn-primary" href="#" role="button">See All</a>
                     </div>
                     <div class="col-12 col-md-8"></div>
                 </div>
             </div>
         </div>
         <div id="results" class="page">
+
             <h1 class="title" data-aos="zoom-out">Results</h1>
         </div>
         <div id="gallery" class="page">

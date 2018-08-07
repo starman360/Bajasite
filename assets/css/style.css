@@ -3,6 +3,37 @@ body {
     overflow-x: hidden;
 }
 
+a{
+    color: #F26F1E;
+}
+
+a:hover {
+    color: rgb(167, 77, 22);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #F26F1E;
+    border-color: #F26F1E;
+}
+
+.btn-outline-primary {
+    color: #F26F1E;
+    background-color: transparent;
+    background-image: none;
+    border-color: #F26F1E;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-outline-primary:hover {
+    background-color: #F26F1E !important;
+    border-color: #F26F1E;
+}
+
+.whiteout {
+    color: #fff;
+}
+
+
 h1,h2,h3 {
     font-family: Bebas-neue;
     font-weight: bold;
@@ -164,8 +195,17 @@ div.riotracing {
     100% {opacity: 1; transform: translateY(-20px);}
 }
 
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+}
 /* Desktops Go Here */
 @media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+
     div#tiles {
         display: flex;
         flex-flow: column wrap;
@@ -193,4 +233,20 @@ div.riotracing {
     div#sponsors div.row .col-4 {
         border-right: 2px gray solid;
     }   
+
+    div#team h1 {
+        margin: 0;
+    }
+    
+    div#team div.card {
+        position: absolute;
+        bottom: 10vh;
+        right: 10vw;
+        width: 300px;
+    }
+    
+    div#team div.card-header {
+        padding-bottom: 2px;
+    }
+    
 }
