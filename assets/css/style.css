@@ -1,0 +1,156 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
+h1,h2,h3 {
+    font-family: Bebas-neue;
+    font-weight: bold;
+}
+
+nav {
+    font-weight: bold;
+}
+
+a.navbar-brand{
+    font-family: Bebas-neue;
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-style: italic;
+}
+
+ul.navbar-nav {
+    /* font-family: Bebas-neue; */
+    /* letter-spacing: 0.1em; */
+    /* font-style: italic; */
+}
+
+div.pages{
+    /* overflow-y: auto;
+    -webkit-scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    -webkit-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -webkit-scroll-snap-points-y: repeat(100%);
+    scroll-snap-points-y: repeat(100%); */
+    position: relative;
+}
+
+div.page{
+    min-height: 100vh;
+    width:  100vw;
+    padding: 50px 50px;
+    padding-top: 106px;
+    overflow: hidden;
+}
+
+div.page > .container-fluid{
+    
+}
+
+div#main.page{ 
+    /* background: url(../images/bajacar.jpg) no-repeat center center fixed; */
+    background-size: cover;
+    position: relative;
+}
+
+div#news.page{
+    overflow-x: scroll;
+}
+
+div#chevrondown {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    background: url(../images/chevron-bottom.png) no-repeat center center ;
+    height: 24px;
+    width: 24px;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+    /* width: 16px; */
+}
+
+div#team.page{
+    background: url(../images/Tile2.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+div.navbar-ghost {
+    height: 56px;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+div.card-header {
+    font-weight: 700;
+    font-family: Bebas-neue;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+}
+
+.d-flex {
+    height: 100px;
+}
+
+div.card {
+    margin: 10px;
+    align-self: flex-start;
+    width: inherit;
+}
+
+div#tiles {
+    display: flex;
+    flex-flow: column wrap;
+    width: 400px;
+    max-height: calc(100vh - 120px);
+}
+
+img.card-img-top {
+    margin-bottom:16px;
+}
+
+div.mainbkg,
+div.riotracing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+div.mainbkg:nth-of-type(1) {
+    background: url(../images/bajacar.jpg) no-repeat center center fixed;
+    background-size: cover;
+    z-index: 0;
+}
+
+div.mainbkg:nth-of-type(3) {
+    background: url(../images/bajacartop.png) no-repeat center center fixed;
+    background-size: cover;
+    z-index: 5;
+}
+
+div.riotracing {
+    width: 80%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(../images/riotracing1.png) no-repeat center center ;
+    background-size: contain;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%   {opacity: 1; transform: translateY(-20px); }
+    25%  {opacity: 0.5; transform: translateY(-5px);}
+    50%  {opacity: 0.25;}
+    75%  {opacity: 0.5; transform: translateY(-5px);}
+    100% {opacity: 1; transform: translateY(-20px);}
+}
