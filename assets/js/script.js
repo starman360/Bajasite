@@ -32,6 +32,13 @@ function isScrolledIntoView(elem) {
     return ((elemBottom - offset <= docViewBottom) && (elemTop + offset >= docViewTop));
 }
 
+function scrolledPassedElement(elem) {
+    var docViewTop = $(window).scrollTop();
+    var elemTop = $(elem).offset().top;
+
+    return docViewTop >= elemTop;
+}
+
 function unlockscroll() {
     setTimeout(function () { scrolllock = false; }, 100)
 }
@@ -85,19 +92,23 @@ function createNewsTiles() {
 
 
 $(document).ready(function () {
-    $('nav#mynav button').addClass('collapsed')
-    $('nav#mynav button').click(function() {
-        if (!$('nav#mynav button').hasClass('collapsed')) {
-            setTimeout(function(){$('nav#mynav').removeClass('bg-white');}, 250);
-        }
-        else {
-            $('nav#mynav').addClass('bg-white');
-        }
-    });
+    // $('nav#mynav button').addClass('collapsed')
+    // $('nav#mynav button').click(function() {
+    //     if (!$('nav#mynav button').hasClass('collapsed')) {
+    //         setTimeout(function(){$('nav#mynav').removeClass('bg-white');}, 250);
+    //     }
+    //     else {
+    //         $('nav#mynav').addClass('bg-white');
+    //     }
+    // });
     createNewsTiles();
     $('.page').each(function () {
         scrollpositions.push($(this).offset().top);
         console.log(scrollpositions);
+    });
+    $(window).scroll(function(){
+        if (scrolledPassedElement('#about')) $('nav#mynav').addClass('bg-white');
+        else $('nav#mynav').removeClass('bg-white');
     });
 
     // $('body').bind('mousewheel', function (e) {
