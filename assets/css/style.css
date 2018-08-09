@@ -28,13 +28,21 @@ a:hover {
     background-color: #F26F1E !important;
     border-color: #F26F1E;
 }
+.navbar-light .navbar-brand.txt-white,
+.navbar-light .navbar-nav .nav-link.txt-white {
+    color: rgba(255, 255, 255, 0.9);
+}
 
 .whiteout {
-    color: #fff;
+    color: rgba(255,255,255,.9);
+}
+
+.popover{
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
 }
 
 
-h1,h2,h3 {
+h1,h2,h3,h4,h5 {
     font-family: Bebas-neue;
     font-weight: bold;
 }
@@ -174,8 +182,41 @@ div.riotracing {
 }
 
 div#car {
-    background: url(../images/testBajaCar.jpg) no-repeat center center;
+    background: url(../images/testBajaCar.jpg) no-repeat top center;
+    background-size: contain;
+    margin-top: 60px;
+    width: 100vw;
+    height: 100%;
+    position: relative;
 }
+
+div.partshowcase.page {
+    padding: 0;
+}
+
+div.partshowcase .row{
+    height: 100vh;
+}
+
+div.partshowcase .row div {
+    padding-top: 106px;
+}
+
+div.partshowcase .col-md-8{
+    background-color: #141414;
+    color: white;
+    -webkit-box-shadow: 11px 0px 39px -8px rgba(0,0,0,0.73);
+    -moz-box-shadow: 11px 0px 39px -8px rgba(0,0,0,0.73);
+    box-shadow: 11px 0px 39px -8px rgba(0,0,0,0.73);
+}
+
+div.partshowcase .title{ 
+    text-align: right;
+    letter-spacing: 0.08em;
+    /* font-family: Helvetica-neue; */
+
+}
+
 
 @keyframes pulse {
     0%   {opacity: 1; transform: translateY(-20px); }
@@ -237,6 +278,63 @@ div#car {
     
     div#team div.card-header {
         padding-bottom: 2px;
+    }
+
+    div.carpopover {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+    div.carpopover img {
+        width: 100px;
+    }
+
+    h3.popover-header {
+        font-size: 2em;
+    }
+    
+    div.carpopover div.popovercontent {
+        width: 100%;
+    }
+    div.carpopover div.popovercontent p:first-of-type{
+        text-align: center;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    div.carpopover div.popovercontent p:nth-of-type(2){
+        margin: 0 10px;
+    }
+    
+    div.carpart {
+        position: absolute;
+        min-height: 30px;
+        min-width: 30px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px white solid;
+    }
+
+    div#sponsortiers {
+        overflow-y: scroll;
+        max-height: calc(100vh - 156px);
+    }
+
+    div#sponsortiers div.sponsortier {
+        display: flex;
+        flex-flow: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    div.sponsortier > img {
+        max-width: 30%;
+        margin: 10px;
+    }
+
+    div.sponsortier h3 {
+        width: 100%;
     }
     
 }
