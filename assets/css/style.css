@@ -319,6 +319,7 @@ div.partshowcase .title{
     div#sponsortiers {
         overflow-y: scroll;
         max-height: calc(100vh - 156px);
+        border-left: 1px rgba(180, 180, 180, 0.5) solid;
     }
 
     div#sponsortiers div.sponsortier {
