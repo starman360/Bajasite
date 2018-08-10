@@ -144,7 +144,7 @@ $(document).ready(function () {
     var file = window.document.location.href.split("/");
     file = file[file.length - 1].split('#');
     file = file[0];
-    if (file == 'index.html') {
+    if (file == 'index.html' || file == '' || file == 'Bajasite') {
         createSponsorLink();
         $(window).scroll(function () {
             if (scrolledIntoElement('#about')) $('nav#mynav').addClass('bg-white');
