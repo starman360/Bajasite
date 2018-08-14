@@ -11,6 +11,11 @@ a:hover {
     color: rgb(167, 77, 22);
 }
 
+.block {
+    display: block;
+    margin: 5px 0px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #F26F1E;
@@ -35,6 +40,53 @@ a:hover {
 
 .whiteout {
     color: rgba(255,255,255,.9);
+}
+
+.btn-platinum {
+    color: #fff;
+    background-color: #e5e4e2;
+    border-color: #e5e4e2;
+}
+
+.btn-gold {
+    color: #fff;
+    background-color: #FFDF00;
+    border-color: #FFDF00;
+}
+
+.btn-silver {
+    color: #fff;
+    background-color: #C0C0C0;
+    border-color: #C0C0C0;
+}
+
+.btn-bronze {
+    color: #fff;
+    background-color: #C9AE5D;
+    border-color: #C9AE5D;
+}
+
+.badge-gold {
+    color: #212529;
+    background-color: #FFDF00;
+}
+
+.badge-silver {
+    color: #212529;
+    background-color: #C0C0C0;
+}
+
+.badge-bronze {
+    color: #212529;
+    background-color: #C9AE5D;
+}
+
+span.badge-pill {
+    margin-right:20px;
+}
+
+.empty-badge {
+    padding-left: 75px;
 }
 
 .popover{
@@ -217,6 +269,33 @@ div.partshowcase .title{
 
 }
 
+div#results button {
+    margin: auto 3px 3px 3px;
+}
+
+div.sponsortier > img {
+    max-width: 30%;
+    margin: 10px;
+}
+
+div.arrow {
+    background: url(../images/chevron-right.png) no-repeat center center;
+    background-size: auto;
+}
+
+div#mteam {
+    min-height: 0px;
+}
+
+div#accordion .card-body, 
+.list-group-flush{
+    padding: 0px;
+}
+
+div#accordion .card {
+    width: auto;
+    margin: 10px 0px;
+}
 
 @keyframes pulse {
     0%   {opacity: 1; transform: translateY(-20px); }
@@ -230,6 +309,44 @@ div.partshowcase .title{
     .desktop-only {
         display: none;
     }
+
+    div#sponsors.page .container-fluid, div#sponsors.page .container-fluid .row{
+        width: calc(200vw - 100px);
+        padding-right:30px;
+    }
+
+    div#sponsors.page {
+        overflow: scroll;
+        min-height: 0px;
+    }
+
+    div#sponsors .col-md-4,
+    div#results .col-md-4,
+    div.col-12 {
+        padding: 0px;
+    }
+
+    div#sponsortiers {
+        overflow-y: scroll;
+        max-height: calc(100vh - 100px);
+        border: 1px rgba(180, 180, 180, 0.25) solid;
+        padding: 20px;
+    }
+
+    div#showresult {
+        margin-top: 50px;
+    }
+
+    div#tiles .card:first-child {
+        margin-left:0px;
+    }
+
+    div#team.page {
+        background: url(../images/Tile2.jpg) no-repeat center center fixed;
+        background-size: cover;
+        min-height: 70vh;
+    }
+
 }
 /* Desktops Go Here */
 @media (min-width: 768px) {
