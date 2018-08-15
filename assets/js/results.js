@@ -4,7 +4,7 @@ var results = {
         "car": {
             "name": "r16",
             "weight": "215",
-            "imgloc": ''
+            "imgloc": 'assets/images/cars/r16.jpg'
         },
         "racetitles": ["Tennessee", "California", "Rochester"],
         "races": [{
@@ -50,7 +50,7 @@ var results = {
         "car": {
             "name": "r17",
             "weight": "215",
-            "imgloc": ''
+            "imgloc": 'assets/images/cars/r17.jpg'
         },
         "racetitles": ["California", "Kansas", "Illinois"],
         "races": [{
@@ -87,7 +87,7 @@ var results = {
         "car": {
             "name": "r18",
             "weight": "215",
-            "imgloc": ''
+            "imgloc": 'assets/images/cars/r18.jpg'
         },
         "racetitles": ["Maryland", "Kansas", "Oregon"],
         "races": [
@@ -180,11 +180,11 @@ function dispResults(year) {
         Object.entries(eventresults).forEach(function (cat) {
             eventlist += createCategory(cat);
         });
-        return '<div class="card"><div class="card-header collapsed" id="' + eventname + '" data-toggle="collapse" data-target="#' + eventname + '-collapse" aria-expanded="false" aria-controls="' + eventname + '-collapse"><h5 class="mb-0">' + eventname + ' Results</h5></div><div id="' + eventname + '-collapse" class="collapse" aria-labelledby="' + eventname + '" data-parent="#accordion"><div class="card-body"><ul class="list-group-flush">' + eventlist + '</ul></div></div></div>'
+        return '<div class="card"><div class="card-header collapsed" id="' + eventname + '" data-toggle="collapse" data-target="#' + eventname + '-collapse" aria-expanded="false" aria-controls="' + eventname + '-collapse"><h5 class="mb-0">' + eventname + ' Results<span class="dropdown"></span></h5></div><div id="' + eventname + '-collapse" class="collapse" aria-labelledby="' + eventname + '" data-parent="#accordion"><div class="card-body"><ul class="list-group-flush">' + eventlist + '</ul></div></div></div>'
     }
 
     yearresults = results[year];
-    var eventtitle = '<h3>' + year + '</h3><img src="' + yearresults.car.imgloc + '" alt="Car from ' + year + '">';
+    var eventtitle = '<h3>' + year + '</h3><img src="' + yearresults.car.imgloc + '" alt="Car from ' + year + '"><h4>' + yearresults.car.name + '</h4>';
     $('div#showresult').empty().append(eventtitle);
     var $accordion = $("<div>", { id: "accordion" });
     yearresults.races.forEach(function (eventresults, index) {
