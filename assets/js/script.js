@@ -88,6 +88,10 @@ $(document).ready(function () {
             if (scrolledIntoElement('#about')) $('nav#mynav').addClass('bg-white');
             else $('nav#mynav').removeClass('bg-white');
         });
+        if (mobile){
+            console.log(mobile);
+            $("#about").css('padding-bottom', 50 + $("#jumpcar").height());
+        }
     }
     if (file == 'thecar.html' || file == 'thecar') {
         if (!mobile) createPopover();
