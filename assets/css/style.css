@@ -101,6 +101,8 @@ h1,h2,h3,h4,h5 {
 
 nav {
     font-weight: bold;
+    font-family: Bebas-neue;
+    font-size: 1.5em;
 }
 
 a.navbar-brand{
@@ -297,6 +299,42 @@ div#accordion .card {
     margin: 10px 0px;
 }
 
+div#showresult img {
+    width: 100%;
+}
+
+span.dropdown {
+    width: 10px;
+    height: 24px;
+    background: url(../images/chevron-bottom-sm.png) no-repeat center center;
+    float: right;
+}
+
+div#about.page {
+    position: relative;
+}
+
+div#about img {
+    position: absolute;
+    width: 50%;
+    right: 0%;
+    bottom: 0%;
+    /* shape-outside: polygon(50% 9%,56% 26%,57% 42%,61% 46%,61% 54%,60% 57%,99% 81%,99% 99%,84% 99%,82% 93%,68% 91%,62% 88%,61% 81%,65% 68%,54% 62%,12% 61%,5% 58%,5% 49%,8% 43%,8% 36%,10% 36%,13% 32%,19% 29%,23% 11%); */
+    z-index: 0;
+}
+
+div#about .bkgtxt {
+    position: absolute;
+    font-style: italic;
+    /* font-weight: bold; */
+    letter-spacing: 0.1em;
+    color: rgba(20,20,20,0.04);
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
 @keyframes pulse {
     0%   {opacity: 1; transform: translateY(-20px); }
     25%  {opacity: 0.5; transform: translateY(-5px);}
@@ -345,6 +383,11 @@ div#accordion .card {
         background: url(../images/Tile2.jpg) no-repeat center center fixed;
         background-size: cover;
         min-height: 70vh;
+    }
+
+    div#about .bkgtxt {
+        top: -162px;
+        right: -50px;
     }
 
 }
@@ -455,4 +498,11 @@ div#accordion .card {
         width: 100%;
     }
     
+    div#accordion {
+        max-width: 500px;
+    }
+
+    div#showresult img {
+        width: 75%;
+    }
 }
