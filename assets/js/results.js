@@ -1,4 +1,83 @@
 var results = {
+    2018: {
+        "mike": 0,
+        "car": {
+            "name": "r18",
+            "weight": "215",
+            "imgloc": 'assets/images/cars/r18.jpg'
+        },
+        "racetitles": ["Maryland", "Kansas", "Oregon"],
+        "races": [
+            {
+                "Design": 1,
+                "Acceleration": 5,
+                "Manuverability": 2,
+                "Hill_Climb": 5,
+                "Suspension_and_Traction": 1,
+                "Cost": 11,
+                "Sales": 2,
+                "Endurance": 5,
+                "Overall": 1,
+            }, {
+                "Design": 1,
+                "Acceleration": 5,
+                "Manuverability": 2,
+                "Sled_Pull": 5,
+                "Suspension_and_Traction": 1,
+                "Cost": 11,
+                "Sales": 2,
+                "Endurance": 5,
+                "Overall": 1,
+            }, {
+                "Design": 1,
+                "Acceleration": 6,
+                "Manuverability": 2,
+                "Hill_Climb": 11,
+                "Rock_Crawl": 1,
+                "Cost": 16,
+                "Sales": 1,
+                "Endurance": 2,
+                "Overall": 1,
+            }
+        ]
+    },
+    2017: {
+        "mike": 0,
+        "car": {
+            "name": "r17",
+            "weight": "215",
+            "imgloc": 'assets/images/cars/r17.jpg'
+        },
+        "racetitles": ["California", "Kansas", "Illinois"],
+        "races": [{
+            "Design": 8,
+            "Acceleration": 13,
+            "Manuverability": 3,
+            "Hill_Climb": 21,
+            "Suspension_and_Traction": 3,
+            "Cost": 5,
+            "Sales": 2,
+            "Endurance": 8,
+            "Overall": 3,
+        }, {
+            "Design": 1,
+            "Acceleration": 2,
+            "Sled_Pull": 13,
+            "Cost": 10,
+            "Sales": 17,
+            "Endurance": 38,
+            "Overall": 28,
+        }, {
+            "Design": 1,
+            "Acceleration": 16,
+            "Manuverability": 3,
+            "Hill_Climb": 15,
+            "Rock_Crawl": 4,
+            "Cost": 6,
+            "Endurance": 15,
+            "Overall": 4,
+        }]
+    },
     2016: {
         "mike": 0,
         "car": {
@@ -45,85 +124,6 @@ var results = {
             "Overall": 2,
         }]
     },
-    2017: {
-        "mike": 0,
-        "car": {
-            "name": "r17",
-            "weight": "215",
-            "imgloc": 'assets/images/cars/r17.jpg'
-        },
-        "racetitles": ["California", "Kansas", "Illinois"],
-        "races": [{
-            "Design": 8,
-            "Acceleration": 13,
-            "Manuverability": 3,
-            "Hill_Climb": 21,
-            "Suspension_and_Traction": 3,
-            "Cost": 5,
-            "Sales": 2,
-            "Endurance": 8,
-            "Overall": 3,
-        }, {
-            "Design": 1,
-            "Acceleration": 2,
-            "Sled_Pull": 13,
-            "Cost": 10,
-            "Sales": 17,
-            "Endurance": 38,
-            "Overall": 28,
-        }, {
-            "Design": 1,
-            "Acceleration": 16,
-            "Manuverability": 3,
-            "Hill_Climb": 15,
-            "Rock_Crawl": 4,
-            "Cost": 6,
-            "Endurance": 15,
-            "Overall": 4,
-        }]
-    },
-    2018: {
-        "mike": 0,
-        "car": {
-            "name": "r18",
-            "weight": "215",
-            "imgloc": 'assets/images/cars/r18.jpg'
-        },
-        "racetitles": ["Maryland", "Kansas", "Oregon"],
-        "races": [
-            {
-                "Design": 1,
-                "Acceleration": 5,
-                "Manuverability": 2,
-                "Hill_Climb": 5,
-                "Suspension_and_Traction": 1,
-                "Cost": 11,
-                "Sales": 2,
-                "Endurance": 5,
-                "Overall": 1,
-            }, {
-                "Design": 1,
-                "Acceleration": 5,
-                "Manuverability": 2,
-                "Sled_Pull": 5,
-                "Suspension_and_Traction": 1,
-                "Cost": 11,
-                "Sales": 2,
-                "Endurance": 5,
-                "Overall": 1,
-            }, {
-                "Design": 1,
-                "Acceleration": 6,
-                "Manuverability": 2,
-                "Hill_Climb": 11,
-                "Rock_Crawl": 1,
-                "Cost": 16,
-                "Sales": 1,
-                "Endurance": 2,
-                "Overall": 1,
-            }
-        ]
-    }
     // 2015: {
     //     "mike": 0,
     //     "racetitles": ["", "", ""],
@@ -184,7 +184,7 @@ function dispResults(year) {
     }
 
     yearresults = results[year];
-    var eventtitle = '<h3>' + year + '</h3><img src="' + yearresults.car.imgloc + '" alt="Car from ' + year + '"><h4>' + yearresults.car.name + '</h4>';
+    var eventtitle = '<h2 class="rotate">' + year + ' - ' + yearresults.car.name + '</h2><img src="' + yearresults.car.imgloc + '" alt="Car from ' + year + '">';
     $('div#showresult').empty().append(eventtitle);
     var $accordion = $("<div>", { id: "accordion" });
     yearresults.races.forEach(function (eventresults, index) {
