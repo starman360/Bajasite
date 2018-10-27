@@ -147,6 +147,14 @@ div.page{
     overflow: hidden;
 }
 
+div.halfpage{
+    min-height: 50vh;
+    width:  100vw;
+    padding: 50px 50px;
+    padding-top: 106px;
+    overflow: hidden;
+}
+
 
 
 div#main.page{ 
@@ -362,6 +370,7 @@ div#about img {
 }
 
 .rotate {
+    transform-origin: top left;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
@@ -422,6 +431,26 @@ div#gallery .col-6:hover {
     z-index: 2;
 }
 
+div.team-hex {
+    position: relative;
+}
+
+div.team-hex h1.group {
+    position: absolute;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    font-style: italic;
+    left: 25px;
+}
+
+div.team-hex hr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    margin: 0% 10vw;
+}
 
 @keyframes pulse {
     0%   {opacity: 1; transform: translateY(-20px); }
