@@ -40,6 +40,9 @@ function createGalleryTiles(year){
 }
 
 $(document).ready(function(){
+    $('h1.year').each(function(value, i){   
+        $(this).css('top', $(this).width() + 106);
+    });
     var file = window.document.location.href.split("/");
     file = file[file.length - 1].split('#');
     year = file[0].split('=');
